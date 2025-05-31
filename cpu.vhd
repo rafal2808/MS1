@@ -27,10 +27,10 @@ architecture Behavioral of cpu is
 
     type memory_type is array (0 to 15) of STD_LOGIC_VECTOR(7 downto 0);
     signal ROM : memory_type := (
-        0 => "00010000", -- LOAD A, 1
-        1 => "00100001", -- LOAD B, 2
+        0 => "00010000", -- LOAD A, 0
+        1 => "00100001", -- LOAD B, 1
         2 => "01000000", -- ADD
-        3 => "00100010", -- LOAD B, 3
+        3 => "00100010", -- LOAD B, 2
         4 => "01000000", -- ADD
         5 => "10000000", -- OUT
         6 => "11110000",
