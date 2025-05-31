@@ -69,18 +69,16 @@ begin
                     case opcode is
                         when "0000" => -- NOP
                             null;
-                        when "0001" => -- LOAD A
+                        when "0001" => -- LD A
                             regA <= RAM(to_integer(unsigned(operand)));
-                        when "0010" => -- LOAD B
+                        when "0010" => -- LD B
                             regB <= RAM(to_integer(unsigned(operand)));
-                        when "0011" => -- STORE A
+                        when "0011" => -- STR A
                             RAM(to_integer(unsigned(operand))) <= regA;
                         when "0100" => -- ADD
                             alu_result <= std_logic_vector(unsigned(regA) + unsigned(regB));
-                            --instr_reg <= instr;
                         when "0101" => -- SUB
                             alu_result <= std_logic_vector(unsigned(regA) - unsigned(regB));
-                            --instr_reg <= instr;
                         when "1000" => -- OUT
                             output_port <= regA;
                         when "1001" => -- IN
