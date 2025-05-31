@@ -88,7 +88,6 @@ begin
                         when others =>
                             null;
                     end case;
-                    pc <= pc + 1;
                     if opcode /= "1111" then
                         state <= WriteBack;
                     end if;
@@ -96,6 +95,7 @@ begin
                     if opcode = "0100" or opcode = "0101" then
                         regA <= alu_result;
                     end if;
+                    pc <= pc + 1;
                     state <= Fetch;
             end case;
         end if;
